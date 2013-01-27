@@ -1,0 +1,23 @@
+<div class="roombooking">
+<h1><{$smarty.const._MD_ROOMBOOKING_LANG_ROOM_LIST_DELETE}></h1>
+
+<div class="confirm"><{$smarty.const._MD_ROOMBOOKING_MESSAGE_CONFIRM_DELETE}></div>
+
+<form action="<{xoops_cooluri dirname=$dirname dataname=room_list action=delete}>" method="post">
+  <dl class="edit">
+  <dt><{$smarty.const._MD_ROOMBOOKING_LANG_ROOM_LIST_ID}></dt>
+  <dd><{$object->getShow('room_list_id')}></dd>
+  <dt><{$smarty.const._MD_ROOMBOOKING_LANG_TITLE}></dt>
+  <dd><{$object->getShow('title')}></dd>
+  <dt><{$smarty.const._MD_ROOMBOOKING_LANG_POSTTIME}></dt>
+  <dd><{$object->getShow('posttime')|xoops_formattimestamp:m}></dd>
+
+    <dd>
+      <{xoops_token form=$actionForm}>
+      <{xoops_input type=hidden name=room_list_id value=$actionForm->get('room_list_id')}>
+      <input type="submit" class="formButton" value="<{$smarty.const._DELETE}>"/>
+      <input type="submit" class="formButton" value="<{$smarty.const._CANCEL}>" name="_form_control_cancel"/>
+    </dd>
+  </dl>
+</form>
+</div>

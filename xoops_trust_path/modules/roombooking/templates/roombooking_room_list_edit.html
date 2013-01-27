@@ -1,0 +1,28 @@
+<div class="roombooking">
+<h1><{$smarty.const._MD_ROOMBOOKING_LANG_ROOM_LIST_EDIT}></h1>
+<{if $actionForm->hasError()}>
+  <ul class="error">
+    <{foreach item=message from=$actionForm->getErrorMessages()}>
+      <li><{$message|xoops_escape}></li>
+    <{/foreach}>
+  </ul>
+<{/if}>
+<form action="<{xoops_cooluri dirname=$dirname dataname=room_list action=edit}>" method="post">
+  <dl class="edit">
+
+  <{xoops_input type=hidden name=room_list_id value=$actionForm->get('room_list_id')}>
+
+  <div class="control-group">
+    <label for="title" class="control-labelrequired"><{$smarty.const._MD_ROOMBOOKING_LANG_TITLE}></label>
+    <div class="controls"><{xoops_input type=text name=title value=$actionForm->get('title') class="span4" maxlength=255required}></div>
+  </div>
+
+    <dt></dt>
+    <dd>
+      <{xoops_token form=$actionForm}>
+      <input type="submit" value="<{$smarty.const._SUBMIT}>" />
+      <input type="submit" value="<{$smarty.const._CANCEL}>" name="_form_control_cancel" />
+    </dd>
+  </dl>
+</form>
+</div>

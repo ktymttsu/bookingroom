@@ -1,0 +1,12 @@
+<div class="roombooking">
+<h1><{$smarty.const._MD_ROOMBOOKING_LANG_ROOM_LIST}><{$smarty.const._VIEW}></h1>
+<dl class="view">
+  <dt><{$smarty.const._MD_ROOMBOOKING_LANG_ROOM_LIST_ID}></dt>
+  <dd><{$object->getShow('room_list_id')}></dd>
+  <dt><{$smarty.const._MD_ROOMBOOKING_LANG_TITLE}></dt>
+  <dd><{$object->getShow('title')}></dd>
+  <dt><{$smarty.const._MD_ROOMBOOKING_LANG_POSTTIME}></dt>
+  <dd><{$object->getShow('posttime')|xoops_formattimestamp:m}></dd>
+
+</dl>
+</div>
